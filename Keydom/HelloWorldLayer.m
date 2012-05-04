@@ -50,6 +50,16 @@
 	return self;
 }
 
+//initialize the shapes
+- (id) initWithShapes:(NSArray *)ArrayOfShapes {
+    NSEnumerator *enumerator = [ArrayOfShapes objectEnumerator];
+    
+    id setObject;
+    while((setObject = [enumerator nextObject]) != nil) {
+        [setObject buildShape];
+    }
+}
+
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc
 {
